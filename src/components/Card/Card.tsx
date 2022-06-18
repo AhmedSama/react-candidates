@@ -42,6 +42,7 @@ export const Card = () => {
   },[totalAmount,numberOfMonths])
   const changeProduct = (id : string) => {
     const newState = products.find(p=>p.id === id)
+    toast.dismiss()
     toast.success(`${newState?.name} is chosen!`,
     {
       position: "bottom-right",

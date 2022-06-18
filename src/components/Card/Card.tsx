@@ -5,6 +5,7 @@ import right_arrow from "../../images/right-arrow.svg"
 import { Img } from "../Img/Img"
 import { products } from "../../product"
 import React, { useEffect, useState } from "react"
+import toast, { Toaster } from "react-hot-toast"
 
 interface IState{
   id: string;
@@ -41,7 +42,17 @@ export const Card = () => {
   },[totalAmount,numberOfMonths])
   const changeProduct = (id : string) => {
     const newState = products.find(p=>p.id === id)
-    console.log(newState)
+    toast.success(`${newState?.name} is chosen!`,
+    {
+      position: "bottom-right",
+      duration: 6000,
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    }
+  );
     setState(newState)
   }
   const handleMounthUp = () => {
@@ -77,6 +88,7 @@ export const Card = () => {
     return mo + " " + ye
   }
   return (
+    <>
     <div className={style.card}>
       <div className={style.products}>
         {
@@ -122,5 +134,7 @@ export const Card = () => {
       </div>
     </div>
     </div>
+    <Toaster />
+    </>
   )
 }

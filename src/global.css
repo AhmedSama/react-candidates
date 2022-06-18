@@ -142,6 +142,9 @@ input[type=number]::-webkit-inner-spin-button {
 .btn:hover{
     opacity: 0.8;
 }
+.pointer{
+    cursor: pointer;
+}
 
 @media (max-width : 560px ){
     .title{

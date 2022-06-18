@@ -111,9 +111,9 @@ export const Card = () => {
       <div className="form-input-container month">
         <label htmlFor="" className="label">Number of mounths</label>
         <div className="form-input">
-          <img onClick={handleMounthDown} src={left_arrow} alt="dollar icon"/>
+          <img className="pointer" onClick={handleMounthDown} src={left_arrow} alt={left_arrow}/>
           <input value={numberOfMonths} onKeyDown={handleKey} type="number" className="text-center" />
-          <img onClick={handleMounthUp} src={right_arrow} alt="dollar icon"/>
+          <img className="pointer" onClick={handleMounthUp} src={right_arrow} alt={right_arrow}/>
         </div>
       </div>
     </div>
